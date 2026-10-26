@@ -1,0 +1,15 @@
+# mrf-online-banking-web
+
+Online banking web front end and BFF for **Maple Ridge Financial**, a fictional bank used in a
+Databricks Lakewatch demo (SBOM-driven supply-chain detection, AI triage, and automated remediation
+pull requests).
+
+> **Demo repository. Intentionally vulnerable.** `package-lock.json` resolves `debug@4.4.2`, one of
+> the npm versions published with malware in the September 2025 account takeover
+> ([GHSA-4x49-vf9v-38px](https://github.com/advisories/GHSA-4x49-vf9v-38px)). npm has unpublished
+> that version, so it cannot be installed; the lockfile entry exists only so the demo's SBOM shows it.
+> Do not deploy this code.
+
+- Node 22, Express 5 BFF (`src/server.js`, `src/routes/`)
+- Single-page app bundled with esbuild (`src/client/`, uses `debug` in the browser)
+- SBOM: GitHub dependency graph (SPDX), pulled into Lakewatch by the demo's collector job
